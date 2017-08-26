@@ -1,0 +1,52 @@
+Exercício 1
+Desenvolva um programa com os requisitos abaixo:
+
+Criar 2 tipos de Serialização e Desserialização para 5000 instâncias de uma classe (Serializar 1 a 1) com as propriedades conforme exemplo abaixo, 
+e imprimir o tempo total de processamento dos 2 tipos implementados. 
+
+Observação: Implementar uma solução com melhor performance possível.
+
+        public class Employee {
+                private int id;
+                private String name;
+                private Date dtNascimento;
+                
+                public Employee(int id, String name, Date dtNascimento) {
+                        this.id = id;
+                        this.name = name;
+                        this.dtNascimento = dtNascimento;
+                }
+                
+        //      ... 
+        }
+
+        Exemplo:  
+        public static void main(String[] args) {
+                List<Employee> records = new ArrayList<>();
+                for (int i = 0; i < 5000; i++) {
+                        records.add(new Employee(i, "Employee " + i, new Date()));
+                }
+                
+                // implementação modelo 1 -> serialize / desserialize 1
+                long tempoProcessamento1 = serialize1(records);
+                
+                // implementação modelo 2 -> serialize / desserialize 2
+                long tempoProcessamento2 = serialize2(records);
+
+                System.out.println("Tempo de processamento 1=" + tempoProcessamento1);
+                System.out.println("Tempo de processamento 2=" + tempoProcessamento2);
+        }
+
+Exercício 2
+Desenvolva um programa com os requisitos abaixo:
+	1 Thread para popular um map com 1000 registros e ao mesmo tempo 2 threads varrendo o map, imprimindo os valores ("Nome da thread >>> registro: ?") e REMOVENDO A CHAVE LIDA DO MAP.
+
+Detalhando: 
+1-) Uma thread (Producer) responsável por popular um Map com 1000 chave/valor.
+2-) Duas threads (Consumer) para listar o map, imprimir "Nome da thread >>> registro: ?" e Remover a chave lida do map.
+
+
+Exercício 3
+Desenvolva um programa com os seguintes requisitos:
+1 Thread para adicionar objetos (Integer) numa fila (FIFO);
+1 Thread para processar os registros da fila e imprimir os valores ("Valor: ")

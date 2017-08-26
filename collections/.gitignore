@@ -1,0 +1,10 @@
+/target/
+.classpath
+MANIFEST.MF
+.project
+org.eclipse*
+.jsd*
+.project
+.settings
+/.idea/
+.metadata
